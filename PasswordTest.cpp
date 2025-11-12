@@ -38,3 +38,13 @@ TEST(PasswordTest, empty)
 	Password my_password;
 	ASSERT_EQ(1, my_password.count_leading_characters(""));
 }
+
+TEST(PasswordTest, is_mixed) {
+	Password my_password;
+	ASSERT_EQ(true, my_password.has_mixed_case("aB"));
+}
+
+TEST(PasswordTest, isnt_mixed) {
+	Password my_password;
+	ASSERT_EQ(false, my_password.has_mixed_case("ab"));
+}
