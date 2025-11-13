@@ -1,7 +1,9 @@
 #include "Password.h"
 #include <string>
+#include <vector>
 
 using std::string;
+using std::vector;
 
 /*
   The function receives a string counts how many times the same character 
@@ -106,5 +108,31 @@ bool Password::has_mixed_case(string str){
 }
 
 unsigned int unique_characters(string str) {
-  
+  vector<char> unique_chars;
+
+  unique_chars.push_back(str[0]);
+
+  for (int i = 1; i < str.length(); i++) {
+    
+    bool not_unique; // by default, false
+    
+    for (int j = 0; j < unique_chars.size(); j++) {
+      if (str[i] == unique_chars[j]) {
+        not_unique = true;
+        break;
+      }
+      else {
+        continue;
+      }
+    }
+    
+    if (!not_unique) {
+      unique_chars.push_back(str[i]);
+      continue;
+    }
+    else {
+      continue;
+    }
+  }
+
 }
