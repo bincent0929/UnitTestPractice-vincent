@@ -28,7 +28,7 @@ int Password::count_leading_characters(string phrase){
 */
 bool Password::has_mixed_case(string str){
   
-  /* A - Passed all tests
+  /* A - Passed all tests*/
   bool has_lower = false;
   bool has_upper = false;
   for (char ch : str)
@@ -43,7 +43,7 @@ bool Password::has_mixed_case(string str){
     }
   }
   return has_lower && has_upper;
-  */
+  
 
   /* B - passed all tests
   int count_lower = 0;
@@ -107,7 +107,7 @@ bool Password::has_mixed_case(string str){
   //return false;
 }
 
-unsigned int unique_characters(string str) {
+unsigned int Password::unique_characters(string str) {
   vector<char> unique_chars;
 
   if (str.length() == 0) {
