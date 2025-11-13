@@ -33,7 +33,7 @@ TEST(PasswordTest, single_leading_letters)
 	ASSERT_EQ(1, my_password.count_leading_characters("abb"));
 }
 
-TEST(PasswordTest, empty)
+TEST(PasswordTest, empty_into_count_leading)
 {
 	Password my_password;
 	ASSERT_EQ(1, my_password.count_leading_characters(""));
@@ -49,7 +49,7 @@ TEST(PasswordTest, isnt_mixed) {
 	ASSERT_EQ(false, my_password.has_mixed_case("ab"));
 }
 
-TEST(PasswordTest, empty) {
+TEST(PasswordTest, empty_into_mixed_case) {
 	Password my_password;
 	ASSERT_EQ(false, my_password.has_mixed_case(""));
 }

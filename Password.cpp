@@ -24,6 +24,83 @@ int Password::count_leading_characters(string phrase){
   receives a string and returns whether it has both at least one upper-case
   letter and at least one lower-case letter
 */
-bool Password::has_mixed_case(string pass){
+bool Password::has_mixed_case(string str){
+  
+  /* A
+  bool has_lower = false;
+  bool has_upper = false;
+  for (char ch : str)
+  {
+    if (std::islower(ch))
+    {
+      has_lower = true;
+    }
+    else if (std::isupper(ch))
+    {
+      has_upper = true;
+    }
+  }
+  return has_lower && has_upper;
+  */
+
+  /* B
+  int count_lower = 0;
+  for (int i = 0; i < str.length(); i++)
+  {
+    if (str[i] >= 'a' && str[i] <= 'z')
+    {
+      count_lower++;
+    }
+  }
+  return count_lower > 0 && count_lower < str.length();
+  */
+
+  /* C
+  bool lower = false;
+  bool upper = false;
+  for (int i = 0; i < str.length(); i++)
+  {
+    if (str[i] >= 'a' && str[i] <= 'z')
+    {
+      lower = true;
+    }
+    else if (str[i] >= 'A' && str[i] <= 'Z')
+    {
+      upper = true;
+    }
+  }
+  return upper && lower;
+  */
+
+  /* D
+  bool is_lower = false;
+  bool is_upper = false;
+  for (char c : str)
+  {
+    if (std::islower(c))
+    {
+      is_lower = true;
+    }
+    else
+    {
+      is_upper = true;
+    }
+  }
+  return is_lower && is_upper;
+  */
+
+  /* E
+  bool found = false;
+  for(char c : str){
+    if( !found && c >= 'A' && c <= 'Z' ){
+      found = true;
+    }
+    else if( found && c >= 'a' && c <= 'z'){
+      return true;
+    }
+  }
   return false;
+  */
+  
+  //return false;
 }
