@@ -58,24 +58,39 @@ TEST(PasswordTest, empty_into_mixed_case) {
 	ASSERT_EQ(false, my_password.has_mixed_case(""));
 }
 
-TEST(PasswordTest, single_char) {
+TEST(PasswordTest, single_char_into_mixed_case) {
 	Password my_password;
 	ASSERT_EQ(false, my_password.has_mixed_case("a"));
 }
 
 // unique_characters tests
 
-TEST(PasswordTest, single_char) {
+TEST(PasswordTest, empty_into_unique_characters) {
 	Password my_password;
-	ASSERT_EQ(false, my_password.unique_characters(""));
+	ASSERT_EQ(0, my_password.unique_characters(""));
 }
 
-TEST(PasswordTest, single_char) {
+TEST(PasswordTest, single_char_into_unique_characters) {
 	Password my_password;
-	ASSERT_EQ(false, my_password.unique_characters(""));
+	ASSERT_EQ(1, my_password.unique_characters("b"));
 }
 
-TEST(PasswordTest, single_char) {
+TEST(PasswordTest, multi_char_multi_unique_into_unique_characters) {
 	Password my_password;
-	ASSERT_EQ(false, my_password.unique_characters(""));
+	ASSERT_EQ(2, my_password.unique_characters("abba"));
+}
+
+TEST(PasswordTest, multi_char_single_unique_into_unique_characters) {
+	Password my_password;
+	ASSERT_EQ(1, my_password.unique_characters("aaaa"));
+}
+
+TEST(PasswordTest, non_letter_char_single_unique_into_unique_characters) {
+	Password my_password;
+	ASSERT_EQ(1, my_password.unique_characters("$$$"));
+}
+
+TEST(PasswordTest, non_letter_char_multi_unique_into_unique_characters) {
+	Password my_password;
+	ASSERT_EQ(3, my_password.unique_characters("$$$^^&"));
 }
