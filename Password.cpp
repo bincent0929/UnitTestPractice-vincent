@@ -104,3 +104,7 @@ bool Password::has_mixed_case(string str){
   
   //return false;
 }
+
+unsigned int unique_characters(string str) {
+  
+}
